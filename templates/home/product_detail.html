@@ -1,0 +1,16 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+
+<h1>{{product.name}}</h1>
+<h3>{{product.description}}</h3>
+<h3> Price: {{product.price}}</h3>
+
+<br>
+<a href="{% url 'review-form' product.pk %}">Left a review</a>
+<h3> Reviews:</h3>
+{% for reveiw in product.reviews.all %}
+<h3>{{reveiw.text}} by  {{reveiw.author}} </h3>
+{% endfor %}
+
+{% endblock %}
