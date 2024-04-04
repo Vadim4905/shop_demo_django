@@ -1,0 +1,12 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+
+<ul>
+    {% for product in products %}
+        <li> <a href="{% url 'product-detail' product.pk %}" >{{product.name}} </a> </li>
+    {% endfor %}
+    
+</ul>
+
+{% endblock %}
